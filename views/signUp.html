@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="he" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>the comunity library- sign up</title>
+    <link rel="stylesheet" href="../static/StyleSheet1.css" />
+
+   
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1> הספריה הקהילתית</h1>
+            <h2> ספרים. אנשים. קהילה</h2>
+        </header>
+        <nav class="sidenav">
+            <ul>
+                <li><a href="homepage.html">מסך הבית</a></li>
+                <li><a href="profilePage.html">החשבון שלי</a></li>
+                <li><a href="addBook.html">הוספת ספר למאגר</a></li>
+                <li><a href="LogIn.html">התנתקות</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page content -->
+        <main class="main-content">
+            <h2>
+                !ברוכים הבאים לספרייה הקהילתית
+            </h2>
+            <h3>
+                ...רק כמה פרטים לפני שמתחילים
+            </h3>
+            <form>
+                <input type="email" placeholder="אימייל" /><br />
+                <input type="text" placeholder=" שם משתמש" /> <br />
+                <input type="text" placeholder="הכנס סיסמא" /><br />
+                <input type="text" placeholder=" הכנס סיסמא שוב" /><br />
+                <input list="genders" name="gender" id="gender" placeholder="מגדר">
+                <datalist id="genders">
+                    <option value="גבר">
+                    <option value="אישה">
+                    <option value="אחר">
+                </datalist><br />
+                <input list="citys" name="city" id="city" placeholder="אזור בארץ" />
+                <datalist id="citys">
+                    <option value="צפון">
+                    <option value="דרום">
+                    <option value="מרכז">
+                </datalist> <br />
+                <input list="languages" name="language" id="language" placeholder="שפה עיקרית" />
+                <datalist id="languages">
+                    <option value="עברית">
+                    <option value="אנגלית">
+                    <option value="רוסית">
+                    <option value="צרפתית">
+                </datalist><br />
+                <input type="button" onclick="location.href = 'homePage.html';" value="הרשמה"/>
+
+            </form>
+
+        </main>
+
+        <footer>
+            <p> משהו לכתוב בסוף הדף</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

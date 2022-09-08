@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html lang="he" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>the comunity library</title>
+    <link rel="stylesheet" href="../static/StyleSheet1.css" />
+
+    <script src="../static/Script1.js"> </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1> הספריה הקהילתית</h1>
+            <h2> ספרים. אנשים. קהילה</h2>
+        </div>
+        <nav class="sidenav">
+            <ul>
+                <li><a href="homepage.html">מסך הבית</a></li>
+                <li><a href="profilePage.html">החשבון שלי</a></li>
+                <li><a href="addBook.html">הוספת ספר למאגר</a></li>
+                <li><a href="LogIn.html">התנתקות</a></li>
+            </ul>
+
+
+        </nav>
+
+        <!-- Page content -->
+        <main class="main-content">
+
+            <form class="search bar">
+                <input id="search"  name="search" type="search" placeholder="חיפוש" />
+                <input  type="button" onclick="location.href='serchResult.html';" value="חפש"/>
+            </form>
+
+            <div class="slide-container">
+                <h3>ספרים חדשים</h3>
+                <div class="slide-content">
+
+                    <div class="left-slide-button" onclick=""></div>
+
+                    <div class="card" id="card1">
+                        <div class="image-content">
+                            <div class="card-image" id="image1">
+                                <img src="../static/images/book covers/east of eden.jpeg" class="card-img" id="card1img" />
+                                <span class="available"></span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h4 class"book-title">book1.title</h4>
+                            <p> location</p>
+                            <div class="btn">
+                                <button class="highlight-button">הזמן</button> <button>פרטים נוספים</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="right-slide-button" onclick=""></button>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <p> משהו לכתוב בסוף הדף</p>
+        </footer>
+
+    </div>
+</body>
+
+
+<!--
+
+
+     -->
+
+</html>

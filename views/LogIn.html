@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="he" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>the comunity library- log in</title>
+    <link rel="stylesheet" href="../static/StyleSheet1.css" />
+    <script src="../static/Script1.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1> הספריה הקהילתית</h1>
+            <h2> ספרים. אנשים. קהילה</h2>
+        </div>
+        <nav class="sidenav">
+            <ul>
+                <li><a href="homepage.html">מסך הבית</a></li>
+                <li><a href="profilePage.html">החשבון שלי</a></li>
+                <li><a href="addBook.html">הוספת ספר למאגר</a></li>
+                <li><a href="signIn.html">התנתקות</a></li>
+            </ul>
+
+
+        </nav>
+
+        <!-- Page content -->
+        <main class="main-content">
+
+            <h1> !ברוכים הבאים לספריה הקהילתית</h1>
+            <form id="login">
+                <input form="login" id="username-login" name="username-login" type="text" placeholder="שם משתמש" />
+                <br /><br />
+
+                <input form="login" id="pasword-login" name="pasword-login" type="password" placeholder="סיסמא" />
+                <br /><br />
+
+                <input class="highlight-button" id="enterLogin" type="button" onclick="location.href = 'homePage.html';" value="כניסה" />
+
+
+            </form>
+
+            <br />
+            <br />
+            <p>עוד לא רשום?</p>
+            <input class="highlight-button" id="entersignUp" type="button" onclick="location.href = 'signUp.html';" value="להרשמה" />
+
+
+        </main>
+        <footer>
+            <p>משהו לכתוב בסוף הדף</p>
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

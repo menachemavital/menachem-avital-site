@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="he" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>the comunity library</title>
+    <link rel="stylesheet" href="../static/StyleSheet1.css" />
+    <script src="../static/Script1.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1> הספריה הקהילתית</h1>
+            <h2> ספרים. אנשים. קהילה</h2>
+        </header>
+        
+        <nav class="sidenav">
+            <ul>
+                <li><a href="homepage.html">מסך הבית</a></li>
+                <li><a href="profilePage.html">החשבון שלי</a></li>
+                <li><a href="addBook.html">הוספת ספר למאגר</a></li>
+                <li><a href="signIn.html">התנתקות</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page content -->
+        <main  class="main-content">
+            
+            <form name="add-book-form" id="add-book-form">
+                <input name="name-add-book-form" id="name-add-book-form" type="text" placeholder="שם הספר" />
+                <br />
+                <input name="author-add-book-form" id="autohr-add-book-form" type="text" placeholder="שם הסופר" />
+                <br />
+                <input name="publisher-add-book-form" id="publisher-add-book-form" type="text" placeholder="הוצאה" />
+                <br />
+                <p> אנא צלם תמונה ברורה של כריכת הספר</p>
+                <input type="file" id="cover-add-book-form" name="cover-add-book-form" accept="image/*,.pdf"> 
+                <br />
+                <br />
+                <input type="checkbox" />
+                <label>אני מאשר קבלת מיילים מאנשים המעוניינים בספר</label>
+                <br />
+                <input type="checkbox" />
+                <label>אני מאשר קבלת הודעות ושיחות טלפון מאנשים המעוניינים בספר</label>
+                <br />
+                <input type="button" class="highlight-button"  onclick = "location.href = 'homePage.html' " value="פרסם ספר"> 
+                
+
+            </form>
+        </main>
+
+        <footer>
+            <p> משהו לכתוב בסוף הדף</p>
+        </footer>
+
+    </div>
+</body>
+
+
+
+
+
+
+</html>
