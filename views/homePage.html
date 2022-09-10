@@ -1,16 +1,18 @@
 ﻿<!DOCTYPE html>
 
-<html lang="he" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="he" >
 <head>
+   
     <meta charset="utf-8" />
     <title>the comunity library</title>
     <link rel="stylesheet" href="../static/StyleSheet1.css" />
 
-    <script src="../static/Script1.js"> </script>
+    <script  src="../static/Script1.js"></script>
+
 
 </head>
 
-<body>
+<body onload ="rightOrder()" >
 
     <div class="container">
         <div class="header">
@@ -24,8 +26,6 @@
                 <li><a href="addBook.html">הוספת ספר למאגר</a></li>
                 <li><a href="LogIn.html">התנתקות</a></li>
             </ul>
-
-
         </nav>
 
         <!-- Page content -->
@@ -40,31 +40,81 @@
                 <h3>ספרים חדשים</h3>
                 <div class="slide-content">
 
-                    <div class="left-slide-button" onclick=""></div>
-
+                    <div class="left-slide-button" onclick="leftOrder();"></div>
+                    <!-- card 1 -->
                     <div class="card" id="card1">
-                        <div class="image-content">
-                            <div class="card-image" id="image1">
-                                <img src="../static/images/book covers/east of eden.jpeg" class="card-img" id="card1img" />
-                                <span class="available"></span>
+                        <div class="image-content" onmouseover="showStatus()">
+                            <div class="card-image">
+                                <img id="card1img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
+                                <span class="available" id="card1-available" style="display:none"> </span>
                             </div>
                         </div>
                         <div class="card-content">
-                            <h4 class"book-title">book1.title</h4>
-                            <p> location</p>
+                            <h5 class="book-title" id="card1-title"></h5>
+                            <p class="card-location" id="card1Location"> location</p>
                             <div class="btn">
-                                <button class="highlight-button">הזמן</button> <button>פרטים נוספים</button>
+                                <button class="highlight-button">הזמן</button> <button id="popUp1btn">פרטים נוספים</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="card" id="card2">
+                        <div class="image-content">
+                            <div class="card-image">
+                                <img id="card2img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
+                                <span class="available" id="card2-available" style="display:none"> </span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h5 class="book-title" id="card2-title"></h5>
+                            <p class="card-location" id="card2Location"> location</p>
+                            <div class="btn">
+                                <button class="highlight-button">הזמן</button> <button id="popUp2btn">פרטים נוספים</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="card" id="card3">
+                        <div class="image-content">
+                            <div class="card-image">
+                                <img id="card3img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
+                                <span class="available" id="card3-available" style="display:none"> </span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h5 class="book-title" id="card3-title"></h5>
+                            <p class="card-location" id="card3Location"> location</p>
+                            <div class="btn">
+                                <button class="highlight-button">הזמן</button> <button id="popUp3btn">פרטים נוספים</button>
                             </div>
                         </div>
                     </div>
 
-                    <button class="right-slide-button" onclick=""></button>
+                    <!-- card 4 -->
+
+                    <div class="card" id="card4">
+                        <div class="image-content">
+                            <div class="card-image">
+                                <img id="card4img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
+                                <span class="available" id="card4-available" style="display:none"> </span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h5 class="book-title" id="card4-title"></h5>
+                            <p class="card-location" id="card4Location"> location</p>
+                            <div class="btn">
+                                <button class="highlight-button">הזמן</button> <button id="popUp4btn">פרטים נוספים</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="right-slide-button" onclick="rightOrder();"></button>
                 </div>
             </div>
 
         </main>
 
-        <footer>
+        <footer >
             <p> משהו לכתוב בסוף הדף</p>
         </footer>
 
