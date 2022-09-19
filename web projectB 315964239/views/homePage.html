@@ -1,24 +1,30 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
-<html lang="he" >
+<html lang="he" style="padding:0;margin:0;" >
 <head>
-   
+
     <meta charset="utf-8" />
     <title>the comunity library</title>
     <link rel="stylesheet" href="../static/StyleSheet1.css" />
 
-    <script  src="../static/Script1.js"></script>
+    <script src="../static/ScripthomePage.js" charset="utf-8" defer></script>
+
+
 
 
 </head>
 
-<body onload ="rightOrder()" >
+<body onload="rightOrder()">
 
     <div class="container">
-        <div class="header">
-            <h1> הספריה הקהילתית</h1>
-            <h2> ספרים. אנשים. קהילה</h2>
-        </div>
+        <header class="header">
+            <div>
+                <h1 class="main-header"> הספריה הקהילתית</h1>
+                <h2> ספרים. אנשים. קהילה</h2>
+            </div>
+            <img class="logo" src="../static/images/logo1.png" />
+
+        </header>
         <nav class="sidenav">
             <ul>
                 <li><a href="homepage.html">מסך הבית</a></li>
@@ -32,8 +38,8 @@
         <main class="main-content">
 
             <form class="search bar">
-                <input id="search"  name="search" type="search" placeholder="חיפוש" />
-                <input  type="button" onclick="location.href='serchResult.html';" value="חפש"/>
+                <input id="search" name="search" type="search" placeholder="חיפוש" />
+                <input type="button" onclick="location.href='serchResult.html';" value="חפש" />
             </form>
 
             <div class="slide-container">
@@ -43,17 +49,17 @@
                     <div class="left-slide-button" onclick="leftOrder();"></div>
                     <!-- card 1 -->
                     <div class="card" id="card1">
-                        <div class="image-content" onmouseover="showStatus()">
+                        <div class="image-content">
                             <div class="card-image">
                                 <img id="card1img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
-                                <span class="available" id="card1-available" style="display:none"> </span>
+                                <span class="status" id="card1-status"> </span>
                             </div>
                         </div>
                         <div class="card-content">
                             <h5 class="book-title" id="card1-title"></h5>
                             <p class="card-location" id="card1Location"> location</p>
                             <div class="btn">
-                                <button class="highlight-button">הזמן</button> <button id="popUp1btn">פרטים נוספים</button>
+                                <button class="highlight-button" id="orderBtn1">הזמן</button> <button id="popUp1btn" onclick="openBookPage();">פרטים נוספים</button>
                             </div>
                         </div>
                     </div>
@@ -62,14 +68,14 @@
                         <div class="image-content">
                             <div class="card-image">
                                 <img id="card2img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
-                                <span class="available" id="card2-available" style="display:none"> </span>
+                                <span class="status" id="card2-status"> </span>
                             </div>
                         </div>
                         <div class="card-content">
                             <h5 class="book-title" id="card2-title"></h5>
                             <p class="card-location" id="card2Location"> location</p>
                             <div class="btn">
-                                <button class="highlight-button">הזמן</button> <button id="popUp2btn">פרטים נוספים</button>
+                                <button class="highlight-button" id="orderBtn2">הזמן</button> <button id="popUp2btn " onclick="openBookPage();">פרטים נוספים</button>
                             </div>
                         </div>
                     </div>
@@ -78,14 +84,14 @@
                         <div class="image-content">
                             <div class="card-image">
                                 <img id="card3img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
-                                <span class="available" id="card3-available" style="display:none"> </span>
+                                <span class="status" id="card3-status"> </span>
                             </div>
                         </div>
                         <div class="card-content">
                             <h5 class="book-title" id="card3-title"></h5>
                             <p class="card-location" id="card3Location"> location</p>
                             <div class="btn">
-                                <button class="highlight-button">הזמן</button> <button id="popUp3btn">פרטים נוספים</button>
+                                <button class="highlight-button" id="orderBtn3">הזמן</button> <button id="popUp3btn" onclick="openBookPage();">פרטים נוספים</button>
                             </div>
                         </div>
                     </div>
@@ -96,14 +102,30 @@
                         <div class="image-content">
                             <div class="card-image">
                                 <img id="card4img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
-                                <span class="available" id="card4-available" style="display:none"> </span>
+                                <span class="status" id="card4-status"> </span>
                             </div>
                         </div>
                         <div class="card-content">
                             <h5 class="book-title" id="card4-title"></h5>
                             <p class="card-location" id="card4Location"> location</p>
                             <div class="btn">
-                                <button class="highlight-button">הזמן</button> <button id="popUp4btn">פרטים נוספים</button>
+                                <button class="highlight-button myBtn" id="orderBtn4">הזמן</button> <button id="popUp4btn" onclick="openBookPage();">פרטים נוספים</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 5-->
+                    <div class="card" id="card5">
+                        <div class="image-content">
+                            <div class="card-image">
+                                <img id="card5img" src="../static/images/book covers/of mice and people.jpeg" class="card-img" />
+                                <span class="status" id="card5-status"> </span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h5 class="book-title" id="card5-title"></h5>
+                            <p class="card-location" id="card5Location"> location</p>
+                            <div class="btn">
+                                <button class="highlight-button myBtn" id="orderBtn5" onclick="openContactDetails();" >הזמן</button> <button id="popUp5btn" onclick="openBookPage();">פרטים נוספים</button>
                             </div>
                         </div>
                     </div>
@@ -112,13 +134,45 @@
                 </div>
             </div>
 
+
+
         </main>
 
-        <footer >
+        <footer>
             <p> משהו לכתוב בסוף הדף</p>
         </footer>
 
     </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>השאל ספר </h2>
+            </div>
+            <div class="modal-body">
+       
+                <p> הספר נמצא אצל: מנחם</p>
+                <a href="tel:+972502136053"> מספר טלפון: 0502136053</a>
+                <a href="mailto: avimen@post.bgu.ac.il"> email: avimen@post.bgu.ac.il</a>
+               
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
 </body>
 
 

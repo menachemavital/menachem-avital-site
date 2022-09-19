@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="he" style="padding:0;margin:0;">
+<head>
+
+    <meta charset="utf-8" />
+    <title>the comunity library</title>
+    <link rel="stylesheet" href="../static/StyleSheet1.css" />
+
+    <script src="../static/Script1.js" charset="utf-8"></script>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1 class="main-header"> הספריה הקהילתית</h1>
+                <h2> ספרים. אנשים. קהילה</h2>
+            </div>
+            <img class="logo" src="../static/images/logo1.png" />
+
+        </header>
+        <nav class="sidenav">
+            <ul>
+                <li><a href="homepage.html">מסך הבית</a></li>
+                <li><a href="profilePage.html">החשבון שלי</a></li>
+                <li><a href="addBook.html">הוספת ספר למאגר</a></li>
+                <li><a href="LogIn.html">התנתקות</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page content -->
+        <main class="main-content">
+            <div class="book-content">
+                <img style="max-height:10vh;" src="../static/images/logo2.png" />
+                <h1 class="book-name">  שם הספר</h1>
+                <h2 class="author-name"> מאת: סופר כלשהו </h2>
+                <h3 class="location">מיקום: באר שבע</h3>
+                <div style="display:flex; justify-content:center; align-items:center;" class="owner-details">
+                    <img class="owner-Profile-pic" style="max-height:5vh; border-radius:1000px" src="../static/images/profile pic.jpg" />
+                    <a class="owner-profile" style="display:inline;" href="profilePage.html"> משאיל: מנחם אביטל</a>
+                </div>
+                <p style="width:80%; padding-left:10%;" class="book-discription">  Long a raven i ancient did uttered never i loneliness and i a i the heart window days and with footfalls explore nevermore from straight the or ease my sitting chamber caught and heaven i the door a the sinking there opened there the the meant its i truly echo</p>
+                <br /><button class="highlight-button" id="myBtn">הזמן</button>
+            </div>
+
+
+        </main>
+
+
+        <footer>
+            <p> משהו לכתוב בסוף הדף</p>
+        </footer>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>השאל ספר </h2>
+            </div>
+            <div class="modal-body">
+                <p> הספר נמצא בבעלות: מנחם</p>
+                <p>טלפון</p>
+                <p>מייל</p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+
+<!--
+
+
+     -->
+
+</html>

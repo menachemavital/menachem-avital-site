@@ -5,18 +5,23 @@
     <meta charset="utf-8" />
     <title>the comunity library- search result</title>
     <link rel="stylesheet" href="../static/StyleSheet1.css" />
+    <script src="../static/ScripthomePage.js" charset="utf-8" defer></script>
 
 
 
 
 </head>
 
-<body >
+<body>
 
     <div class="container">
         <header class="header">
-            <h1> הספריה הקהילתית</h1>
-            <h2> ספרים. אנשים. קהילה</h2>
+            <div>
+                <h1 class="main-header"> הספריה הקהילתית</h1>
+                <h2> ספרים. אנשים. קהילה</h2>
+            </div>
+            <img class="logo" src="../static/images/logo1.png" />
+
         </header>
         <nav class="sidenav">
             <ul>
@@ -31,7 +36,7 @@
         <main class="main-content">
             <form class="search bar">
                 <input id="search" name="search" type="search" placeholder="חיפוש" />
-                <input type="button" onclick="location.href='serchResult.html';" value="חפש" />
+                <input type="button" onclick="location.href='serchResult.html';" value="חפש"  minlength="3"/>
             </form>
 
             <h2>הנה התוצאות שמצאנו עבורך</h2>
@@ -44,14 +49,14 @@
                     <p>מאת: ג'ון סטיינבק</p>
                     <p>מיקום: באר שבע</p>
                     <p>תיאור הספר: סיפורם של שני אחים ושני דורות בעמק סאליאנס שבקליפורניה,והוא משל לעלילת קין והבל ולשאלת הטוב והרע בעולם </p>
-                    
+
                 </div>
                 <div class="result-btn">
                     <div class="btn">
-                        <br /><button class="highlight-button">
+                        <br /><button class="highlight-button" onclick="modal.style.display = 'block';">
                             הזמן
                         </button> <br /><br />
-                        <button>
+                        <button onclick="openBookPage();">
                             צפה בפרטים
                         </button>
 
@@ -67,16 +72,21 @@
                     <h4>שם הספר: סוס אחד נכנס לבר</h4>
                     <p>מאת: דויד גרוסמן</p>
                     <p>מיקום: באר שבע</p>
-                    <p>תיאור הספר: הופעת סטנדאפ במרתף בנתניה הולכת ומשתבשת, מתפוררת לעיני הקהל.
-                    בין אם הערב נשמט מידי הסטנדאפיסט, ובין אם תוכנן מראש להיות כזה- הקהל שבא לבלות ולצחוק נדהם לקבל הופעה מסוג אחר לגמרי.</p>
+                    <p>
+                        תיאור הספר: הופעת סטנדאפ במרתף בנתניה הולכת ומשתבשת, מתפוררת לעיני הקהל.
+                        בין אם הערב נשמט מידי הסטנדאפיסט, ובין אם תוכנן מראש להיות כזה- הקהל שבא לבלות ולצחוק נדהם לקבל הופעה מסוג אחר לגמרי.
+                    </p>
                 </div>
                 <div class="result-btn">
-                    <button class="highlight-button">
-                        הזמן
-                    </button> <br /><br />
-                    <button>
-                        צפה בפרטים
-                    </button>
+                    <div class="btn">
+                        <br /><button class="highlight-button" onclick="modal.style.display = 'block';">
+                            הזמן
+                        </button> <br /><br />
+                        <button onclick="openBookPage();">
+                            צפה בפרטים
+                        </button>
+
+                    </div>
                 </div>
             </div>
 
@@ -86,6 +96,25 @@
         </footer>
     </div>
 
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>השאל ספר </h2>
+            </div>
+            <div class="modal-body">
+                <p> הספר נמצא בבעלות: מנחם</p>
+                <p>טלפון</p>
+                <p>מייל</p>
+
+            </div>
+
+        </div>
+    </div>
 
 
 
