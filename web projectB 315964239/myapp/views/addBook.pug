@@ -1,0 +1,46 @@
+﻿doctype html
+html(lang='he', xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(charset='utf-8')
+    title the comunity library
+    link(rel='stylesheet', href='/StyleSheet1.css')
+    script(src='/Script1.js', defer='')
+  body
+    .container
+      header.header
+        div
+          h1.main-header  &#x5D4;&#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5D4; &#x5D4;&#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5EA;&#x5D9;&#x5EA;
+          h2  &#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5DD;. &#x5D0;&#x5E0;&#x5E9;&#x5D9;&#x5DD;. &#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5D4;
+        img.logo(src='/images/logo1.png')
+      nav.sidenav
+        ul
+          li
+            a(href='homepage.html') &#x5DE;&#x5E1;&#x5DA; &#x5D4;&#x5D1;&#x5D9;&#x5EA;
+          li
+            a(href='profilePage.html') &#x5D4;&#x5D7;&#x5E9;&#x5D1;&#x5D5;&#x5DF; &#x5E9;&#x5DC;&#x5D9;
+          li
+            a(href='addBook.html') &#x5D4;&#x5D5;&#x5E1;&#x5E4;&#x5EA; &#x5E1;&#x5E4;&#x5E8; &#x5DC;&#x5DE;&#x5D0;&#x5D2;&#x5E8;
+          li
+            a(href='LogIn.html') &#x5D4;&#x5EA;&#x5E0;&#x5EA;&#x5E7;&#x5D5;&#x5EA;
+      // Page content
+      main.main-content
+        form#add-book-form(name='add-book-form', action='homePage.html')
+          input#name-add-book-form(name='name-add-book-form', type='text', placeholder='שם הספר', required='', minlength='3', maxlength='25')
+          br
+          input#autohr-add-book-form(name='author-add-book-form', type='text', placeholder='שם הסופר', required='', minlength='3', maxlength='25')
+          br
+          input#publisher-add-book-form(name='publisher-add-book-form', type='text', placeholder='הוצאה', required='', minlength='3', maxlength='10')
+          br
+          p  &#x5D0;&#x5E0;&#x5D0; &#x5E6;&#x5DC;&#x5DD; &#x5EA;&#x5DE;&#x5D5;&#x5E0;&#x5D4; &#x5D1;&#x5E8;&#x5D5;&#x5E8;&#x5D4; &#x5E9;&#x5DC; &#x5DB;&#x5E8;&#x5D9;&#x5DB;&#x5EA; &#x5D4;&#x5E1;&#x5E4;&#x5E8;
+          input#cover-add-book-form(type='file', name='cover-add-book-form', accept='image/*,.pdf')
+          br
+          br
+          input(type='checkbox')
+          label &#x5D0;&#x5E0;&#x5D9; &#x5DE;&#x5D0;&#x5E9;&#x5E8; &#x5E7;&#x5D1;&#x5DC;&#x5EA; &#x5DE;&#x5D9;&#x5D9;&#x5DC;&#x5D9;&#x5DD; &#x5DE;&#x5D0;&#x5E0;&#x5E9;&#x5D9;&#x5DD; &#x5D4;&#x5DE;&#x5E2;&#x5D5;&#x5E0;&#x5D9;&#x5D9;&#x5E0;&#x5D9;&#x5DD; &#x5D1;&#x5E1;&#x5E4;&#x5E8;
+          br
+          input(type='checkbox')
+          label &#x5D0;&#x5E0;&#x5D9; &#x5DE;&#x5D0;&#x5E9;&#x5E8; &#x5E7;&#x5D1;&#x5DC;&#x5EA; &#x5D4;&#x5D5;&#x5D3;&#x5E2;&#x5D5;&#x5EA; &#x5D5;&#x5E9;&#x5D9;&#x5D7;&#x5D5;&#x5EA; &#x5D8;&#x5DC;&#x5E4;&#x5D5;&#x5DF; &#x5DE;&#x5D0;&#x5E0;&#x5E9;&#x5D9;&#x5DD; &#x5D4;&#x5DE;&#x5E2;&#x5D5;&#x5E0;&#x5D9;&#x5D9;&#x5E0;&#x5D9;&#x5DD; &#x5D1;&#x5E1;&#x5E4;&#x5E8;
+          br
+          button.highlight-button(type='submit') &#x5E4;&#x5E8;&#x5E1;&#x5DD; &#x5E1;&#x5E4;&#x5E8;
+      footer
+        p  &#x5DE;&#x5E9;&#x5D4;&#x5D5; &#x5DC;&#x5DB;&#x5EA;&#x5D5;&#x5D1; &#x5D1;&#x5E1;&#x5D5;&#x5E3; &#x5D4;&#x5D3;&#x5E3;

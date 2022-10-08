@@ -1,0 +1,106 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title the comunity library
+  link(rel='stylesheet' href='/StyleSheet1.css')
+  script(src='/ScripthomePage.js' charset='utf-8' defer='')
+.container
+  header.header
+    div
+      h1.main-header  &#x5D4;&#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5D4; &#x5D4;&#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5EA;&#x5D9;&#x5EA;
+      h2  &#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5DD;. &#x5D0;&#x5E0;&#x5E9;&#x5D9;&#x5DD;. &#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5D4;
+    img.logo(src='/images/logo1.png')
+  nav.sidenav
+    ul
+      li
+        a(href='homepage.html') &#x5DE;&#x5E1;&#x5DA; &#x5D4;&#x5D1;&#x5D9;&#x5EA;
+      li
+        a(href='profilePage.html') &#x5D4;&#x5D7;&#x5E9;&#x5D1;&#x5D5;&#x5DF; &#x5E9;&#x5DC;&#x5D9;
+      li
+        a(href='addBook.html') &#x5D4;&#x5D5;&#x5E1;&#x5E4;&#x5EA; &#x5E1;&#x5E4;&#x5E8; &#x5DC;&#x5DE;&#x5D0;&#x5D2;&#x5E8;
+      li
+        a(href='LogIn.html') &#x5D4;&#x5EA;&#x5E0;&#x5EA;&#x5E7;&#x5D5;&#x5EA;
+  // Page content
+  main.main-content
+    form.search.bar
+      input#search(name='search' type='search' placeholder='חיפוש')
+      input(type='button' onclick="location.href='serchResult.html';" value='חפש')
+    .slide-container
+      h3 &#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5DD; &#x5D7;&#x5D3;&#x5E9;&#x5D9;&#x5DD;
+      .slide-content
+        .left-slide-button(onclick='leftOrder();')
+        // card 1
+        #card1.card
+          .image-content
+            .card-image
+              img#card1img.card-img(src='/images/book covers/of mice and people.jpeg')
+              span#card1-status.status  
+          .card-content
+            h5#card1-title.book-title
+            p#card1Location.card-location  location
+            .btn
+              button#orderBtn1.highlight-button &#x5D4;&#x5D6;&#x5DE;&#x5DF;
+              button#popUp1btn(onclick='openBookPage();') &#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD; &#x5E0;&#x5D5;&#x5E1;&#x5E4;&#x5D9;&#x5DD;
+        // card 2
+        #card2.card
+          .image-content
+            .card-image
+              img#card2img.card-img(src='/images/book covers/of mice and people.jpeg')
+              span#card2-status.status  
+          .card-content
+            h5#card2-title.book-title
+            p#card2Location.card-location  location
+            .btn
+              button#orderBtn2.highlight-button &#x5D4;&#x5D6;&#x5DE;&#x5DF;
+              button#popUp2btn (onclick='openBookPage();') &#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD; &#x5E0;&#x5D5;&#x5E1;&#x5E4;&#x5D9;&#x5DD;
+        // card 3
+        #card3.card
+          .image-content
+            .card-image
+              img#card3img.card-img(src='/images/book covers/of mice and people.jpeg')
+              span#card3-status.status  
+          .card-content
+            h5#card3-title.book-title
+            p#card3Location.card-location  location
+            .btn
+              button#orderBtn3.highlight-button &#x5D4;&#x5D6;&#x5DE;&#x5DF;
+              button#popUp3btn(onclick='openBookPage();') &#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD; &#x5E0;&#x5D5;&#x5E1;&#x5E4;&#x5D9;&#x5DD;
+        // card 4
+        #card4.card
+          .image-content
+            .card-image
+              img#card4img.card-img(src='/images/book covers/of mice and people.jpeg')
+              span#card4-status.status  
+          .card-content
+            h5#card4-title.book-title
+            p#card4Location.card-location  location
+            .btn
+              button#orderBtn4.highlight-button.myBtn &#x5D4;&#x5D6;&#x5DE;&#x5DF;
+              button#popUp4btn(onclick='openBookPage();') &#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD; &#x5E0;&#x5D5;&#x5E1;&#x5E4;&#x5D9;&#x5DD;
+        // card 5
+        #card5.card
+          .image-content
+            .card-image
+              img#card5img.card-img(src='/images/book covers/of mice and people.jpeg')
+              span#card5-status.status  
+          .card-content
+            h5#card5-title.book-title
+            p#card5Location.card-location  location
+            .btn
+              button#orderBtn5.highlight-button.myBtn(onclick='openContactDetails();') &#x5D4;&#x5D6;&#x5DE;&#x5DF;
+              button#popUp5btn(onclick='openBookPage();') &#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD; &#x5E0;&#x5D5;&#x5E1;&#x5E4;&#x5D9;&#x5DD;
+        button.right-slide-button(onclick='rightOrder();')
+  footer
+    p  &#x5DE;&#x5E9;&#x5D4;&#x5D5; &#x5DC;&#x5DB;&#x5EA;&#x5D5;&#x5D1; &#x5D1;&#x5E1;&#x5D5;&#x5E3; &#x5D4;&#x5D3;&#x5E3;
+// The Modal
+#myModal.modal
+  // Modal content
+  .modal-content
+    .modal-header
+      span.close &times;
+      h2 &#x5D4;&#x5E9;&#x5D0;&#x5DC; &#x5E1;&#x5E4;&#x5E8; 
+    .modal-body
+      p  &#x5D4;&#x5E1;&#x5E4;&#x5E8; &#x5E0;&#x5DE;&#x5E6;&#x5D0; &#x5D0;&#x5E6;&#x5DC;: &#x5DE;&#x5E0;&#x5D7;&#x5DD;
+      a(href='tel:+972502136053')  &#x5DE;&#x5E1;&#x5E4;&#x5E8; &#x5D8;&#x5DC;&#x5E4;&#x5D5;&#x5DF;: 0502136053
+      a(href='mailto: avimen@post.bgu.ac.il')  email: avimen@post.bgu.ac.il
+//
