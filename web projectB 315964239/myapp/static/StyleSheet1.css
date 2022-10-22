@@ -7,6 +7,7 @@
     text-align: center;
     margin: 5px;
     padding: 5px;
+    
    
  
 }
@@ -69,8 +70,9 @@ h1 h2 {
 .main-content {
     grid-area: mc;
     min-height: 100vh;
+    display:flex;
+    flex-direction: column;
     
-    position: relative;
 
 }
 
@@ -97,6 +99,7 @@ footer {
     color: beige;
     margin: 0;
     padding:0;
+    position: relative;
     
 }
 
@@ -107,9 +110,9 @@ footer {
     padding: 0;
 }
 
-ul {
+.a{
     list-style-type: none;
-    background-color: #f1f1f1;
+    background-color: rgb(240, 238, 238);
     position: fixed;
     padding: 0;
     margin: 0;
@@ -157,18 +160,34 @@ li a {
         box-shadow: rgba(0,0,0,0.2) 5px 5px;
     }
 
+.highlight-button-red {
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px 5px;
+    border-width: thin;
+}
 
+
+    .highlight-button-red:hover {
+        background-color:red;
+        color: white;
+        box-shadow: rgba(0,0,0,0.2) 5px 5px;
+    }
 
    /*result page*/
 
 .resultBlock{
-    background-color:silver ;
+    
     width:60%;
-    height:10%;    
+    height:30vh;    
     display:inline-flex;  
     justify-content:space-between;
     margin:20px;
     padding:10px;
+    justify-self: center;
+    border:solid grey 1px;
+    background-color: rgb(240, 238, 238);
     
     
     
@@ -186,10 +205,22 @@ li a {
 }
 .result-btn{
   flex:1;
-  align-self:end;
+  align-self:center;
+  
     
 }
 
+
+
+
+.book-content{
+    background-color: rgb(240, 238, 238);
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    border:solid grey 1px;
+
+}
 
 /*home page card slider*/
 
@@ -216,7 +247,7 @@ li a {
     display:block;
     
 }
-.card-img:hover + .status {
+.card-img:hover + .isAvailable {
      display: inline;
         }
 
@@ -269,14 +300,14 @@ li a {
 
 }
 
-.status {
+.isAvailable {
     display:none;
     color: whitesmoke;
     font-weight: 600;
     font-size: 20px;
     position: relative;
     bottom: 30px;
-    left: 25px;
+    left: 0px;
     text-decoration-line: overline underline;
     text-shadow:1px 1px 1px black;
     
@@ -328,25 +359,8 @@ li a {
 
     
 }
-.profile-container{
-    display: grid;
-    grid-template-areas: 'l r' ;
-    margin:0;
-    padding:0;
-   
-    
-}
-
-.left{
-    grid-area:l;
-    width:100%;
-    margin:0;
-
-}
-.right{
-    grid-area:r;
-    width:100%;
-    margin:0;
+a{
+color: rgb(0, 114, 114);
 }
 
 /*profile page*/
@@ -354,6 +368,8 @@ li a {
 .profile-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-history{
@@ -361,7 +377,9 @@ li a {
     flex-direction:column;
 }
 .profile-history-table {
-   background-color:white;
+    border:solid grey 1px;
+    background-color: rgb(240, 238, 238);
+    
    
 }
 tr{

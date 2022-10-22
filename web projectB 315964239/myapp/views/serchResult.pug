@@ -1,80 +1,38 @@
-﻿doctype html
-html(lang='he', xmlns='http://www.w3.org/1999/xhtml')
-  head
-    meta(charset='utf-8')
-    title the comunity library- search result
-    link(rel='stylesheet', href='/StyleSheet1.css')
-    script(src='/ScripthomePage.js', charset='utf-8', defer='')
-  body
-    .container
-      header.header
-        div
-          h1.main-header  &#x5D4;&#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5D4; &#x5D4;&#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5EA;&#x5D9;&#x5EA;
-          h2  &#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5DD;. &#x5D0;&#x5E0;&#x5E9;&#x5D9;&#x5DD;. &#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5D4;
-        img.logo(src='/images/logo1.png')
-      nav.sidenav
-        ul
-          li
-            a(href='homepage.html') &#x5DE;&#x5E1;&#x5DA; &#x5D4;&#x5D1;&#x5D9;&#x5EA;
-          li
-            a(href='profilePage.html') &#x5D4;&#x5D7;&#x5E9;&#x5D1;&#x5D5;&#x5DF; &#x5E9;&#x5DC;&#x5D9;
-          li
-            a(href='addBook.html') &#x5D4;&#x5D5;&#x5E1;&#x5E4;&#x5EA; &#x5E1;&#x5E4;&#x5E8; &#x5DC;&#x5DE;&#x5D0;&#x5D2;&#x5E8;
-          li
-            a(href='LogIn.html') &#x5D4;&#x5EA;&#x5E0;&#x5EA;&#x5E7;&#x5D5;&#x5EA;
-      // Page content
-      main.main-content
-        form.search.bar
-          input#search(name='search', type='search', placeholder='חיפוש')
-          input(type='button', onclick="location.href='serchResult.html';", value='חפש', minlength='3')
-        h2 &#x5D4;&#x5E0;&#x5D4; &#x5D4;&#x5EA;&#x5D5;&#x5E6;&#x5D0;&#x5D5;&#x5EA; &#x5E9;&#x5DE;&#x5E6;&#x5D0;&#x5E0;&#x5D5; &#x5E2;&#x5D1;&#x5D5;&#x5E8;&#x5DA;
-        .resultBlock
-          img.result-img(src='/images/book covers/east of eden.jpeg')
+﻿extends layout 
+block content
+  main.main-content
+    form.search.bar(action="/searchResult" method = "get" enctype="multipart/form-data")
+      input#search(name='query' type='search' placeholder='חיפוש')
+      input(type='submit'  value='חפש')  
+    h2 אלה התוצאות שמצאנו עבור: #{old_query}
+    
+    ul 
+      each result in results  
+        
+        li.resultBlock
+          .image-content
+            .card-image
+              img.card-img(src=result.cover_url)
+              
+              if(result.status)
+                span.isAvailable זמין
+              else 
+                span.isAvailable מושאל
+
           .result-discription
-            h4 &#x5E9;&#x5DD; &#x5D4;&#x5E1;&#x5E4;&#x5E8;: &#x5E7;&#x5D3;&#x5DE;&#x5EA; &#x5E2;&#x5D3;&#x5DF;
-            p &#x5DE;&#x5D0;&#x5EA;: &#x5D2;&apos;&#x5D5;&#x5DF; &#x5E1;&#x5D8;&#x5D9;&#x5D9;&#x5E0;&#x5D1;&#x5E7;
-            p &#x5DE;&#x5D9;&#x5E7;&#x5D5;&#x5DD;: &#x5D1;&#x5D0;&#x5E8; &#x5E9;&#x5D1;&#x5E2;
-            p
-              | &#x5EA;&#x5D9;&#x5D0;&#x5D5;&#x5E8; &#x5D4;&#x5E1;&#x5E4;&#x5E8;: &#x5E1;&#x5D9;&#x5E4;&#x5D5;&#x5E8;&#x5DD; &#x5E9;&#x5DC; &#x5E9;&#x5E0;&#x5D9; &#x5D0;&#x5D7;&#x5D9;&#x5DD; &#x5D5;&#x5E9;&#x5E0;&#x5D9; &#x5D3;&#x5D5;&#x5E8;&#x5D5;&#x5EA; &#x5D1;&#x5E2;&#x5DE;&#x5E7; &#x5E1;&#x5D0;&#x5DC;&#x5D9;&#x5D0;&#x5E0;&#x5E1; &#x5E9;&#x5D1;&#x5E7;&#x5DC;&#x5D9;&#x5E4;&#x5D5;&#x5E8;&#x5E0;&#x5D9;&#x5D4;,&#x5D5;&#x5D4;&#x5D5;&#x5D0; &#x5DE;&#x5E9;&#x5DC; &#x5DC;&#x5E2;&#x5DC;&#x5D9;&#x5DC;&#x5EA; &#x5E7;&#x5D9;&#x5DF; &#x5D5;&#x5D4;&#x5D1;&#x5DC; &#x5D5;&#x5DC;&#x5E9;&#x5D0;&#x5DC;&#x5EA; &#x5D4;&#x5D8;&#x5D5;&#x5D1; &#x5D5;&#x5D4;&#x5E8;&#x5E2; &#x5D1;&#x5E2;&#x5D5;&#x5DC;&#x5DD;
+            h4 #{result.book_name}
+            p #{result.author}
+            p #{result.discription}
+              
           .result-btn
-            .btn
-              br
-              button.highlight-button(onclick="modal.style.display = 'block';")
-                | &#x5D4;&#x5D6;&#x5DE;&#x5DF;
-              |  
-              br
-              br
-              button(onclick='openBookPage();')
-                | &#x5E6;&#x5E4;&#x5D4; &#x5D1;&#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD;
-        .resultBlock
-          img.result-img(src='/images/book covers/a horse walks into a bar.jpeg')
-          .result-discription
-            h4 &#x5E9;&#x5DD; &#x5D4;&#x5E1;&#x5E4;&#x5E8;: &#x5E1;&#x5D5;&#x5E1; &#x5D0;&#x5D7;&#x5D3; &#x5E0;&#x5DB;&#x5E0;&#x5E1; &#x5DC;&#x5D1;&#x5E8;
-            p &#x5DE;&#x5D0;&#x5EA;: &#x5D3;&#x5D5;&#x5D9;&#x5D3; &#x5D2;&#x5E8;&#x5D5;&#x5E1;&#x5DE;&#x5DF;
-            p &#x5DE;&#x5D9;&#x5E7;&#x5D5;&#x5DD;: &#x5D1;&#x5D0;&#x5E8; &#x5E9;&#x5D1;&#x5E2;
-            p
-              | &#x5EA;&#x5D9;&#x5D0;&#x5D5;&#x5E8; &#x5D4;&#x5E1;&#x5E4;&#x5E8;: &#x5D4;&#x5D5;&#x5E4;&#x5E2;&#x5EA; &#x5E1;&#x5D8;&#x5E0;&#x5D3;&#x5D0;&#x5E4; &#x5D1;&#x5DE;&#x5E8;&#x5EA;&#x5E3; &#x5D1;&#x5E0;&#x5EA;&#x5E0;&#x5D9;&#x5D4; &#x5D4;&#x5D5;&#x5DC;&#x5DB;&#x5EA; &#x5D5;&#x5DE;&#x5E9;&#x5EA;&#x5D1;&#x5E9;&#x5EA;, &#x5DE;&#x5EA;&#x5E4;&#x5D5;&#x5E8;&#x5E8;&#x5EA; &#x5DC;&#x5E2;&#x5D9;&#x5E0;&#x5D9; &#x5D4;&#x5E7;&#x5D4;&#x5DC;.
-              | &#x5D1;&#x5D9;&#x5DF; &#x5D0;&#x5DD; &#x5D4;&#x5E2;&#x5E8;&#x5D1; &#x5E0;&#x5E9;&#x5DE;&#x5D8; &#x5DE;&#x5D9;&#x5D3;&#x5D9; &#x5D4;&#x5E1;&#x5D8;&#x5E0;&#x5D3;&#x5D0;&#x5E4;&#x5D9;&#x5E1;&#x5D8;, &#x5D5;&#x5D1;&#x5D9;&#x5DF; &#x5D0;&#x5DD; &#x5EA;&#x5D5;&#x5DB;&#x5E0;&#x5DF; &#x5DE;&#x5E8;&#x5D0;&#x5E9; &#x5DC;&#x5D4;&#x5D9;&#x5D5;&#x5EA; &#x5DB;&#x5D6;&#x5D4;- &#x5D4;&#x5E7;&#x5D4;&#x5DC; &#x5E9;&#x5D1;&#x5D0; &#x5DC;&#x5D1;&#x5DC;&#x5D5;&#x5EA; &#x5D5;&#x5DC;&#x5E6;&#x5D7;&#x5D5;&#x5E7; &#x5E0;&#x5D3;&#x5D4;&#x5DD; &#x5DC;&#x5E7;&#x5D1;&#x5DC; &#x5D4;&#x5D5;&#x5E4;&#x5E2;&#x5D4; &#x5DE;&#x5E1;&#x5D5;&#x5D2; &#x5D0;&#x5D7;&#x5E8; &#x5DC;&#x5D2;&#x5DE;&#x5E8;&#x5D9;.
-          .result-btn
-            .btn
-              br
-              button.highlight-button(onclick="modal.style.display = 'block';")
-                | &#x5D4;&#x5D6;&#x5DE;&#x5DF;
-              |  
-              br
-              br
-              button(onclick='openBookPage();')
-                | &#x5E6;&#x5E4;&#x5D4; &#x5D1;&#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD;
-      footer
-        p &#x5DE;&#x5E9;&#x5D4;&#x5D5; &#x5DC;&#x5DB;&#x5EA;&#x5D5;&#x5D1; &#x5D1;&#x5E1;&#x5D5;&#x5E3; &#x5D4;&#x5D3;&#x5E3;
-    // The Modal
-    #myModal.modal
-      // Modal content
-      .modal-content
-        .modal-header
-          span.close &times;
-          h2 &#x5D4;&#x5E9;&#x5D0;&#x5DC; &#x5E1;&#x5E4;&#x5E8; 
-        .modal-body
-          p  &#x5D4;&#x5E1;&#x5E4;&#x5E8; &#x5E0;&#x5DE;&#x5E6;&#x5D0; &#x5D1;&#x5D1;&#x5E2;&#x5DC;&#x5D5;&#x5EA;: &#x5DE;&#x5E0;&#x5D7;&#x5DD;
-          p &#x5D8;&#x5DC;&#x5E4;&#x5D5;&#x5DF;
-          p &#x5DE;&#x5D9;&#x5D9;&#x5DC;
+          
+            
+            form(action = "/bookPage" , method = "post")
+                  input(type = "hidden", name="book_name" ,value = result.book_name)
+                  input(type = "hidden", name="owner_email" ,value = result.owner_email)
+                  button.highlight-button( type="submit") הזמן
+            
+            form(action = "/bookPage" , method = "get")
+                  input(type = "hidden", name="book_name" ,value = result.book_name)
+                  input(type = "hidden", name="owner_email" ,value = result.owner_email)
+                  button(type = "submit" ) פרטים נוספים           

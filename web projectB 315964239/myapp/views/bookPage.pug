@@ -1,52 +1,25 @@
-﻿doctype html
-html(lang='he', style='padding:0;margin:0;')
-  head
-    meta(charset='utf-8')
-    title the comunity library
-    link(rel='stylesheet', href='/StyleSheet1.css')
-    script(src='/Script1.js', charset='utf-8')
-  body
-    .container
-      header.header
-        div
-          h1.main-header  &#x5D4;&#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5D4; &#x5D4;&#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5EA;&#x5D9;&#x5EA;
-          h2  &#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5DD;. &#x5D0;&#x5E0;&#x5E9;&#x5D9;&#x5DD;. &#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5D4;
-        img.logo(src='/images/logo1.png')
-      nav.sidenav
-        ul
-          li
-            a(href='homepage.html') &#x5DE;&#x5E1;&#x5DA; &#x5D4;&#x5D1;&#x5D9;&#x5EA;
-          li
-            a(href='profilePage.html') &#x5D4;&#x5D7;&#x5E9;&#x5D1;&#x5D5;&#x5DF; &#x5E9;&#x5DC;&#x5D9;
-          li
-            a(href='addBook.html') &#x5D4;&#x5D5;&#x5E1;&#x5E4;&#x5EA; &#x5E1;&#x5E4;&#x5E8; &#x5DC;&#x5DE;&#x5D0;&#x5D2;&#x5E8;
-          li
-            a(href='LogIn.html') &#x5D4;&#x5EA;&#x5E0;&#x5EA;&#x5E7;&#x5D5;&#x5EA;
-      // Page content
-      main.main-content
-        .book-content
-          img(style='max-height:10vh;', src='/images/logo2.png')
-          h1.book-name   &#x5E9;&#x5DD; &#x5D4;&#x5E1;&#x5E4;&#x5E8;
-          h2.author-name  &#x5DE;&#x5D0;&#x5EA;: &#x5E1;&#x5D5;&#x5E4;&#x5E8; &#x5DB;&#x5DC;&#x5E9;&#x5D4;&#x5D5; 
-          h3.location &#x5DE;&#x5D9;&#x5E7;&#x5D5;&#x5DD;: &#x5D1;&#x5D0;&#x5E8; &#x5E9;&#x5D1;&#x5E2;
-          .owner-details(style='display:flex; justify-content:center; align-items:center;')
-            img.owner-Profile-pic(style='max-height:5vh; border-radius:1000px', src='/images/profile pic.jpg')
-            a.owner-profile(style='display:inline;', href='profilePage.html')  &#x5DE;&#x5E9;&#x5D0;&#x5D9;&#x5DC;: &#x5DE;&#x5E0;&#x5D7;&#x5DD; &#x5D0;&#x5D1;&#x5D9;&#x5D8;&#x5DC;
-          p.book-discription(style='width:80%; padding-left:10%;')
-            | Long a raven i ancient did uttered never i loneliness and i a i the heart window days and with footfalls explore nevermore from straight the or ease my sitting chamber caught and heaven i the door a the sinking there opened there the the meant its i truly echo
-          br
-          button#myBtn.highlight-button &#x5D4;&#x5D6;&#x5DE;&#x5DF;
-      footer
-        p  &#x5DE;&#x5E9;&#x5D4;&#x5D5; &#x5DC;&#x5DB;&#x5EA;&#x5D5;&#x5D1; &#x5D1;&#x5E1;&#x5D5;&#x5E3; &#x5D4;&#x5D3;&#x5E3;
-    // The Modal
-    #myModal.modal
-      // Modal content
-      .modal-content
-        .modal-header
-          span.close &times;
-          h2 &#x5D4;&#x5E9;&#x5D0;&#x5DC; &#x5E1;&#x5E4;&#x5E8; 
-        .modal-body
-          p  &#x5D4;&#x5E1;&#x5E4;&#x5E8; &#x5E0;&#x5DE;&#x5E6;&#x5D0; &#x5D1;&#x5D1;&#x5E2;&#x5DC;&#x5D5;&#x5EA;: &#x5DE;&#x5E0;&#x5D7;&#x5DD;
-          p &#x5D8;&#x5DC;&#x5E4;&#x5D5;&#x5DF;
-          p &#x5DE;&#x5D9;&#x5D9;&#x5DC;
-    //
+﻿
+extends layout
+block content
+  main.main-content
+    .book-content
+      .card-image(style ="height:30vh; width:10vw" )
+        img.card-img(src = bookDetails.cover_url)               
+        if(bookDetails.status)
+          span.isAvailable זמין
+        else 
+          span.isAvailable מושאל
+      h1.book-name  #{bookDetails.book_name}
+      h2.author-name  #{bookDetails.author} 
+      h3.location #{bookDetails.city}
+      .owner-details(style='display:flex; justify-content:center; align-items:center;')
+        img.owner-Profile-pic(style='max-height:5vh; border-radius:1000px')
+        a.owner-profile(style='display:inline;', href='profilePage.html')  
+        p.book-discription(style='width:80%; padding-left:10%;') #{bookDetails.discription}
+        
+     
+      form(action = "/bookPage" , method = "post")
+        input(type = "hidden", name="book_name" ,value = bookDetails.book_name)
+        input(type = "hidden", name="owner_email" ,value = bookDetails.owner_email)
+        button.highlight-button( type="submit") הזמן
+      

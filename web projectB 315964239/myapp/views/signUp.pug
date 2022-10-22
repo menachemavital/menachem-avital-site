@@ -1,88 +1,45 @@
-﻿doctype html
-html(lang='he', xmlns='http://www.w3.org/1999/xhtml')
-  head
-    meta(charset='utf-8')
-    title the comunity library- sign up
-    link(rel='stylesheet', href='/StyleSheet1.css')
-    //script(defer='', src='/Script1.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-  body
-    .container
-      header.header
-        div
-          h1.main-header  &#x5D4;&#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5D4; &#x5D4;&#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5EA;&#x5D9;&#x5EA;
-          h2  &#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5DD;. &#x5D0;&#x5E0;&#x5E9;&#x5D9;&#x5DD;. &#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5D4;
-        img.logo(src='/images/logo1.png')
-      nav.sidenav
-        ul
-          li
-            a(href='homepage.html') &#x5DE;&#x5E1;&#x5DA; &#x5D4;&#x5D1;&#x5D9;&#x5EA;
-          li
-            a(href='profilePage.html') &#x5D4;&#x5D7;&#x5E9;&#x5D1;&#x5D5;&#x5DF; &#x5E9;&#x5DC;&#x5D9;
-          li
-            a(href='addBook.html') &#x5D4;&#x5D5;&#x5E1;&#x5E4;&#x5EA; &#x5E1;&#x5E4;&#x5E8; &#x5DC;&#x5DE;&#x5D0;&#x5D2;&#x5E8;
-          li
-            a(href='LogIn.html') &#x5D4;&#x5EA;&#x5E0;&#x5EA;&#x5E7;&#x5D5;&#x5EA;
-      // Page content
-      main.main-content
-        h2
-          | !&#x5D1;&#x5E8;&#x5D5;&#x5DB;&#x5D9;&#x5DD; &#x5D4;&#x5D1;&#x5D0;&#x5D9;&#x5DD; &#x5DC;&#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5D9;&#x5D4; &#x5D4;&#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5EA;&#x5D9;&#x5EA;
-        h3
-          | ...&#x5E8;&#x5E7; &#x5DB;&#x5DE;&#x5D4; &#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD; &#x5DC;&#x5E4;&#x5E0;&#x5D9; &#x5E9;&#x5DE;&#x5EA;&#x5D7;&#x5D9;&#x5DC;&#x5D9;&#x5DD;
-        form#myForm.form-inline(action="/users/add" method = "post" enctype="multipart/form-data" )
-          input(type='email', name="email" placeholder='אימייל', required='')
-          br
-          input(type='text', name="userName" ,placeholder=' שם משתמש', required='')
-          |  
-          br
-          input(type='text',name="password1", placeholder='הכנס סיסמא', required='')
-          br
-          input(type='text',name="password2", placeholder=' הכנס סיסמא שוב', required='')
-          br
-          input(type='text',name="phoneNumber", placeholder=' מספר פלאפון', required='')
-          br
-          input#gender(list='genders', name='gender', placeholder='מגדר')
-          datalist#genders
-            option(value='גבר')
-            option(value='אישה')
-            option(value='אחר')
-          br
-          input#city(list='citys', name='city', placeholder='אזור בארץ', required='')
-          datalist#citys
-            option(value='צפון')
-            option(value='דרום')
-            option(value='מרכז')
-          |  
-          br
-          input#language(list='languages', name='language', placeholder='שפה עיקרית')
-          datalist#languages
-            option(value='עברית')
-            option(value='אנגלית')
-            option(value='רוסית')
-            option(value='צרפתית')
-          br
-          p
-            input#profile-pic-sign-up(type='file', name ="picture" accept='image/*,.pdf')
-            |  :&#x5D0;&#x5DD; &#x5D1;&#x5E8;&#x5E6;&#x5D5;&#x5E0;&#x5DA; &#x5DC;&#x5D4;&#x5E1;&#x5D9;&#x5E3; &#x5EA;&#x5DE;&#x5D5;&#x5E0;&#x5EA; &#x5E4;&#x5E8;&#x5D5;&#x5E4;&#x5D9;&#x5DC;
-          br
-          button.highlight-button(type='submit')  &#x5D4;&#x5E8;&#x5E9;&#x5DE;&#x5D4;
-      footer
-        p  &#x5DE;&#x5E9;&#x5D4;&#x5D5; &#x5DC;&#x5DB;&#x5EA;&#x5D5;&#x5D1; &#x5D1;&#x5E1;&#x5D5;&#x5E3; &#x5D4;&#x5D3;&#x5E3;
-    // The Modal
-    #myModal.modal
-      // Modal content
-      .modal-content
-        .modal-header
-          span.close &times;
-          h2 !&#x5D1;&#x5E8;&#x5D5;&#x5DA; &#x5D4;&#x5D1;&#x5D0; 
-        .modal-body
-          h3 &#x5D0;&#x5E0;&#x5D7;&#x5E0;&#x5D5; &#x5E9;&#x5DE;&#x5D7;&#x5D9;&#x5DD; &#x5E9;&#x5D4;&#x5E6;&#x5D8;&#x5E8;&#x5E4;&#x5EA; &#x5D0;&#x5DC;&#x5D9;&#x5E0;&#x5D5;
-          h4 ?&#x5D0;&#x5D6; &#x5D0;&#x5D9;&#x5DA; &#x5D6;&#x5D4; &#x5E2;&#x5D5;&#x5D1;&#x5D3;
-          p
-            | &#x5D1;&#x5D0;&#x5EA;&#x5E8; &#x5DE;&#x5EA;&#x5E4;&#x5E8;&#x5E1;&#x5DE;&#x5D9;&#x5DD; &#x5DE;&#x5D9;&#x5D3;&#x5D9; &#x5D9;&#x5D5;&#x5DD; &#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5DD; &#x5DC;&#x5D4;&#x5E9;&#x5D0;&#x5DC;&#x5D4;, &#x5EA;&#x5D5;&#x5DB;&#x5DC; &#x5DC;&#x5D7;&#x5E4;&#x5E9; &#x5D0;&#x5D5;&#x5EA;&#x5DD; &#x5DC;&#x5E4;&#x5D9; &#x5D0;&#x5D6;&#x5D5;&#x5E8;, &#x5D6;&apos;&#x5D0;&#x5E0;&#x5E8; &#x5D0;&#x5D5; &#x5DC;&#x5D7;&#x5E4;&#x5E9; &#x5D0;&#x5D7;&#x5E8; &#x5E1;&#x5E4;&#x5E8; &#x5E1;&#x5E4;&#x5E6;&#x5D9;&#x5E4;&#x5D9;
-          p &#x5D1;&#x5DB;&#x5D3;&#x5D9; &#x5DC;&#x5E9;&#x5D0;&#x5D5;&#x5DC; &#x5E1;&#x5E4;&#x5E8; &#x5D9;&#x5E9; &#x5DC;&#x5D4;&#x5E9;&#x5EA;&#x5DE;&#x5E9; &#x5D1;&#x5E7;&#x5E8;&#x5D3;&#x5D9;&#x5D8;
-          p &#x5DB;&#x5DC; &#x5DE;&#x5E9;&#x5EA;&#x5DE;&#x5E9; &#x5D7;&#x5D3;&#x5E9; &#x5DE;&#x5E7;&#x5D1;&#x5DC; 10 &#x5E7;&#x5E8;&#x5D3;&#x5D9;&#x5D8; &#x5E9;&#x5D1;&#x5D4;&#x5DD; &#x5D4;&#x5D5;&#x5D0; &#x5D9;&#x5DB;&#x5D5;&#x5DC; &#x5DC;&#x5D4;&#x5E9;&#x5EA;&#x5DE;&#x5E9;
-          p
-            | &#x5E2;&#x5DD; &#x5D4;&#x5E7;&#x5E8;&#x5D3;&#x5D9;&#x5D8; &#x5EA;&#x5D5;&#x5DB;&#x5DC; &#x5DC;&#x5E9;&#x5D0;&#x5D5;&#x5DC; &#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5DD; &#x5D5;&#x5E0;&#x5D9;&#x5EA;&#x5DF; &#x5DC;&#x5D4;&#x5E8;&#x5D5;&#x5D5;&#x5D9;&#x5D7; &#x5E7;&#x5E8;&#x5D3;&#x5D9;&#x5D8; &#x5D0;&#x5DC; &#x5D9;&#x5D3;&#x5D9; &#x5D4;&#x5E9;&#x5EA;&#x5EA;&#x5E4;&#x5D5;&#x5EA; &#x5E4;&#x5E2;&#x5D9;&#x5DC;&#x5D4; &#x5D1;&#x5D0;&#x5EA;&#x5E8;, &#x5E4;&#x5E8;&#x5E1;&#x5D5;&#x5DD; &#x5E1;&#x5E4;&#x5E8;, &#x5D4;&#x5E9;&#x5D0;&#x5DC;&#x5EA; &#x5E1;&#x5E4;&#x5E8; &#x5D5;&#x5DB;&#x5D3;&#x5D5;&#x5DE;&#x5D4;
-          input.highlight-button(type='button', value='להמשך גלישה באתר', onclick=" window.location = 'homePage.html';")
+﻿extends layout
+block content
+  main.main-content
+    h2
+      | !&#x5D1;&#x5E8;&#x5D5;&#x5DB;&#x5D9;&#x5DD; &#x5D4;&#x5D1;&#x5D0;&#x5D9;&#x5DD; &#x5DC;&#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5D9;&#x5D4; &#x5D4;&#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5EA;&#x5D9;&#x5EA;
+    h3
+      | ...&#x5E8;&#x5E7; &#x5DB;&#x5DE;&#x5D4; &#x5E4;&#x5E8;&#x5D8;&#x5D9;&#x5DD; &#x5DC;&#x5E4;&#x5E0;&#x5D9; &#x5E9;&#x5DE;&#x5EA;&#x5D7;&#x5D9;&#x5DC;&#x5D9;&#x5DD;
+    form#myForm.form-inline(action="/users/add" method = "post" enctype="multipart/form-data")
+      input(type='email', name="email" placeholder='אימייל', required='')
+      br
+      input(type='text', name="userName" ,placeholder=' שם משתמש', required='')
+      |  
+      br
+      input(type='text',name="password1", placeholder='הכנס סיסמא', required='')
+      br
+      input(type='text',name="password2", placeholder=' הכנס סיסמא שוב', required='')
+      br
+      input(type='text',name="phoneNumber", placeholder=' מספר פלאפון', required='')
+      br
+      input#gender(list='genders', name='gender', placeholder='מגדר')
+      datalist#genders
+        option(value='גבר')
+        option(value='אישה')
+        option(value='אחר')
+      br
+      input#city(list='citys', name='city', placeholder='אזור בארץ', required='')
+      datalist#citys
+        option(value='צפון')
+        option(value='דרום')
+        option(value='מרכז')
+      |  
+      br
+      input#language(list='languages', name='language', placeholder='שפה עיקרית')
+      datalist#languages
+        option(value='עברית')
+        option(value='אנגלית')
+        option(value='רוסית')
+        option(value='צרפתית')
+      br
+      p
+        input#profile-pic-sign-up(type='file', name ="picture" accept='image/*,.pdf')
+        |  :&#x5D0;&#x5DD; &#x5D1;&#x5E8;&#x5E6;&#x5D5;&#x5E0;&#x5DA; &#x5DC;&#x5D4;&#x5E1;&#x5D9;&#x5E3; &#x5EA;&#x5DE;&#x5D5;&#x5E0;&#x5EA; &#x5E4;&#x5E8;&#x5D5;&#x5E4;&#x5D9;&#x5DC;
+      br
+      button.highlight-button(type='submit')  &#x5D4;&#x5E8;&#x5E9;&#x5DE;&#x5D4;
+      
