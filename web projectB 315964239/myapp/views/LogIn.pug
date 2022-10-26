@@ -3,11 +3,11 @@ block content
   main.main-content
     h1  !&#x5D1;&#x5E8;&#x5D5;&#x5DB;&#x5D9;&#x5DD; &#x5D4;&#x5D1;&#x5D0;&#x5D9;&#x5DD; &#x5DC;&#x5E1;&#x5E4;&#x5E8;&#x5D9;&#x5D4; &#x5D4;&#x5E7;&#x5D4;&#x5D9;&#x5DC;&#x5EA;&#x5D9;&#x5EA;
     form#login(action='/logIn' method = 'post')
-      input#username-login( type='text', name = "email" ,placeholder='שם משתמש', required='', minlength='3', maxlength='50')
+      input#username-login( type='text', name = "email" ,placeholder='שם משתמש', required='', minlength='3', maxlength='50', value = userEmail)
       br
       br
       input#pasword-login( type='password', name = "password", placeholder='סיסמא', required='', minlength='5', maxlength='30')
-      br
+      h3(style = "color:red") #{message}
       br
       button#enterLogin.highlight-button(type='submit')  &#x5DB;&#x5E0;&#x5D9;&#x5E1;&#x5D4;
       br

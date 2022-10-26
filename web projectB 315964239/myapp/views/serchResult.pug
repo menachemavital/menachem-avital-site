@@ -4,7 +4,7 @@ block content
     form.search.bar(action="/searchResult" method = "get" enctype="multipart/form-data")
       input#search(name='query' type='search' placeholder='חיפוש')
       input(type='submit'  value='חפש')  
-    h2 אלה התוצאות שמצאנו עבור: #{old_query}
+    h2  #{message}
     
     ul 
       each result in results  

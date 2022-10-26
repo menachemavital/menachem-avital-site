@@ -37,7 +37,7 @@ block content
                       input(type="hidden", name="book", value = r)
                   td 
                     form(action='/bookPage/bookRequests/refuse', method="post" ) 
-                      button.highlight-button(type="submit", name="") סרב
+                      button.highlight-button-red(type="submit", name="") סרב
                       input(type="hidden", name="book", value = r)
 
       .user-messages
@@ -57,7 +57,7 @@ block content
                             td #{m.time}
                             td 
                               form(action="/bookPage/bookRequests/cancle", method="post" ) 
-                                button.highlight-button(type="submit", name="") בטל בקשה
+                                button.highlight-button-red(type="submit", name="") בטל בקשה
                                 input(type="hidden", name="myReq", value = m)
                             
 
@@ -77,14 +77,17 @@ block content
                 tr
                   td #{u.book_name }
                   if(u.email = u.owner_email)
-                    td(style = 'background-color:red') השאלתי 
+                    td(style = 'background-color:green;') השאלתי 
                   else
-                    td(style = 'background-color:green') שאלתי
+                    td(style = 'background-color:red;') שאלתי
                   td #{u.start_date}
                   td #{u.end_date}
-                  td 
-                    form(action="/bookPage/loan/finish", method="post" ) 
-                      button.highlight-button(type="submit", name="") סיים השאלה
-                      input(type="hidden", name="finish", value = u)
+                  if(u.end_date = null)
+                    td 
+                      form(action="/bookPage/loan/finish", method="post" ) 
+                        button.highlight-button(type="submit", name="") סיים השאלה
+                        input(type="hidden", name="finish", value = u)
+                  else 
+                    td הוחזר
                 
       
