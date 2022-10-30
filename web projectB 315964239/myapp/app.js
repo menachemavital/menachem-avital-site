@@ -2,7 +2,7 @@
 const express = require('express');
 const BodyParser = require('body-parser');
 const path = require('path');
-const PORT = process.env.PORT || 5000;
+const port =5000;
 const sql = require('./db');
 const CRUD = require('./CRUD'); 
 const { Server } = require('http');
@@ -110,6 +110,6 @@ app.post('/bookPage/loan/finish',CRUD.endLoan)
 
 
 // listen
-app.listen(PORT, ()=>{
+app.listen(port, ()=>{
     console.log("server is running on port " + port);
 });  
