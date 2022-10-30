@@ -110,6 +110,6 @@ app.post('/bookPage/loan/finish',CRUD.endLoan)
 
 
 // listen
-app.listen(port, ()=>{
+app.listen(PORT, ()=>{
     console.log("server is running on port " + port);
 });  
