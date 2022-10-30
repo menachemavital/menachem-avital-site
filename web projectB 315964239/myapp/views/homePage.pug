@@ -19,7 +19,7 @@ block content
           .card(style='display:none', id ='card'+index)
             .image-content
               .card-image
-                img.card-img(src = result.cover_url)
+                img.card-img(src = result.cover_url ,alt = result.book_name)
                 
                 if(result.status)
                   span.isAvailable זמין
