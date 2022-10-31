@@ -2,7 +2,7 @@
 const express = require('express');
 const BodyParser = require('body-parser');
 const path = require('path');
-const port =5000;
+const port = print.env.PORT ||5000;
 const sql = require('./db');
 const CRUD = require('./CRUD'); 
 const { Server } = require('http');
