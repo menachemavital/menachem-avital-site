@@ -22,7 +22,7 @@ app.use(express.static('static'));
 
 //session setup 
 const session = require('express-session');
-//const store = new session.MemoryStore();
+const store = new session.MemoryStore();
 app.use(session({
 	secret: 'secret',
 	resave: true,
