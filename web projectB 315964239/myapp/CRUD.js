@@ -95,7 +95,7 @@ const getSearchResults = (req,res)=>{
     if(req.query){
         console.log(req.query.query);
         
-    sql.query('SELECT * FROM weblibrary.books WHERE book_name like ? OR author like ?',[req.query.query,req.query.query] , function(error, results, fields) {
+    sql.query('SELECT * FROM books WHERE book_name like ? OR author like ?',[req.query.query,req.query.query] , function(error, results, fields) {
         // If there is an issue with the query, output the error
         if (error) throw error;
         // If the account exists
@@ -273,7 +273,7 @@ const addLoan = (req,res)=>{
      
     console.log(a)
     //checking if the book is not double orderd
-    sql.query('select status from weblibrary.books WHERE book_name = ? and owner_email = ?',[a.book_name,a.owner_email] , 
+    sql.query('select status from books WHERE book_name = ? and owner_email = ?',[a.book_name,a.owner_email] , 
     function(error, result, fields) {
         
         // If there is an issue with the query, output the error
@@ -287,14 +287,14 @@ const addLoan = (req,res)=>{
 
         else{
                     //update the DB that the book is no longeer avialble
-            sql.query('update weblibrary.books set status = 0 WHERE book_name = ? and owner_email = ?',[a.book_name,a.owner_email] , 
+            sql.query('update books set status = 0 WHERE book_name = ? and owner_email = ?',[a.book_name,a.owner_email] , 
             function(error, results, fields) {
                 // If there is an issue with the query, output the error
                 if (error) throw error;       
             })
 
             //update the DB that the book is no longeer avialble
-            sql.query('update weblibrary.book_requests set status = "מאושר" WHERE book_name = ? and owner_email = ? ',[a.book_name,a.owner_email] , 
+            sql.query('update book_requests set status = "מאושר" WHERE book_name = ? and owner_email = ? ',[a.book_name,a.owner_email] , 
             function(error, results, fields) {
                 // If there is an issue with the query, output the error
                 if (error) throw error;        
@@ -354,7 +354,7 @@ const InsertBookRequest = (req,res)=>{
 const refuseRequest = (req,res)=>{
     // loaner can refuse to a request 
     a = JSON.parse(req.body.book)
-    sql.query('update weblibrary.book_requests set status = "מסורב" WHERE book_name = ? and owner_email = ? ',[a.book_name,a.owner_email] , 
+    sql.query('update book_requests set status = "מסורב" WHERE book_name = ? and owner_email = ? ',[a.book_name,a.owner_email] , 
     function(error, results, fields) {
         // If there is an issue with the query, output the error
         if (error) throw error;        
@@ -365,7 +365,7 @@ const refuseRequest = (req,res)=>{
 const cancleRequest = (req,res)=>{
     //the user asking for a book can cancle a request if no longer relevant
     m = JSON.parse(req.body.myReq)
-    sql.query('update weblibrary.book_requests set status = "מבוטל" WHERE book_name = ? and user_asking = ? ',[m.book_name,m.user_asking] , 
+    sql.query('update book_requests set status = "מבוטל" WHERE book_name = ? and user_asking = ? ',[m.book_name,m.user_asking] , 
     function(error, results, fields) {
         // If there is an issue with the query, output the error
         if (error) throw error;        
@@ -377,13 +377,13 @@ const endLoan =(req,res)=>{
     // when the book is returned to the owner, he cn then end the loan so the book will be avialable again
     var d  = new Date().toISOString().slice(0, 10);
     var f = JSON.parse(req.body.finish);
-     sql.query('update weblibrary.books set status = 1 WHERE book_name = ? and owner_email = ? ',[f.book_name,req.session.email,] , 
+     sql.query('update books set status = 1 WHERE book_name = ? and owner_email = ? ',[f.book_name,req.session.email,] , 
      function(error, results, fields) {
          // If there is an issue with the query, output the error
          if (error) throw error;        
      })
      console.log(f.start_date)
-     sql.query('update weblibrary.loans set end_date = ? WHERE book_name = ?  and owner_email = ? and lowner_email = ?',[d,f.book_name,req.session.email, f.lowner_email] , 
+     sql.query('update loans set end_date = ? WHERE book_name = ?  and owner_email = ? and lowner_email = ?',[d,f.book_name,req.session.email, f.lowner_email] , 
      function(error, results, fields) {
          // If there is an issue with the query, output te error
          if (error) throw error;        
